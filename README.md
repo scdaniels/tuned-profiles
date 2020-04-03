@@ -12,7 +12,7 @@ yum list --installed tuned >/dev/null 2>&1 || yum -y install tuned
 
 # clone repo and copy in profile:
 git clone https://github.com/scdaniels/tuned-profiles.git
-cp tuned-profiles/${PROFILE} /usr/lib/tuned/
+cp -r tuned-profiles/${PROFILE} /usr/lib/tuned/
 
 # enable and start tuned and enable the profile:
 systemctl enable --now tuned 
